@@ -14,8 +14,8 @@ jobs:
       uses: machine-learning-apps/gpr-docker-publish@master
       id: docker
       with:
-        USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        USERNAME: ${{ secrets.GITHUB_PACKAGE_REGISTRY_LOGIN }}
+        PASSWORD: ${{ secrets.GITHUB_PACKAGE_REGISTRY_PASSWORD }}
         IMAGE_NAME: 'test-docker-action'
         DOCKERFILE_PATH: 'Dockerfile'
         BUILD_CONTEXT: '.'
