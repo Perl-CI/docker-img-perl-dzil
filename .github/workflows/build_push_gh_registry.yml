@@ -8,9 +8,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@master
 
-     #This Action Emits 2 Variables, IMAGE_SHA_NAME and IMAGE_URL 
-     #which you can reference in subsequent steps
-    - name: Publish Docker Image to GPR
+    - name: Publish Docker Image to Github Package Registry
       uses: sebthebert/github-action-build-push-github-package-registry@master
       id: docker
       with:
@@ -18,8 +16,6 @@ jobs:
         GITHUB_PACKAGE_REGISTRY_PASSWORD: ${{ secrets.GITHUB_PACKAGE_REGISTRY_PASSWORD }}
         IMAGE_NAME: 'perl-dzil'
 
-    # This second step is illustrative and shows how to reference the 
-    # output variables.  This is completely optional.
     - name: Show outputs of pervious step
       run: |
         echo "The name:tag of the Docker Image is: $VAR1"
