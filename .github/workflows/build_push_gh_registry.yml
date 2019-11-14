@@ -16,10 +16,10 @@ jobs:
         GITHUB_PACKAGE_REGISTRY_PASSWORD: ${{ secrets.GITHUB_PACKAGE_REGISTRY_PASSWORD }}
         IMAGE_NAME: 'perl-dzil'
 
-    - name: Show outputs of pervious step
+    - name: Show previous step output
       run: |
-        echo "The name:tag of the Docker Image is: $VAR1"
-        echo "The docker image is hosted at $VAR2"
+        echo "The Docker Image is: $VAR1"
+        echo "The Docker Image is hosted at $VAR2"
       env:
         VAR1: ${{ steps.docker.outputs.DOCKER_IMAGE_NAME }}
         VAR2: ${{ steps.docker.outputs.DOCKER_IMAGE_URL }}
