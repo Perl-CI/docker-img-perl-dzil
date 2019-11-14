@@ -11,14 +11,12 @@ jobs:
      #This Action Emits 2 Variables, IMAGE_SHA_NAME and IMAGE_URL 
      #which you can reference in subsequent steps
     - name: Publish Docker Image to GPR
-      uses: machine-learning-apps/gpr-docker-publish@master
+      uses: sebthebert/github-action-build-push-github-package-registry@master
       id: docker
       with:
-        USERNAME: ${{ secrets.GITHUB_PACKAGE_REGISTRY_LOGIN }}
-        PASSWORD: ${{ secrets.GITHUB_PACKAGE_REGISTRY_PASSWORD }}
-        IMAGE_NAME: 'test-docker-action'
-        DOCKERFILE_PATH: 'Dockerfile'
-        BUILD_CONTEXT: '.'
+        GITHUB_PACKAGE_REGISTRY_LOGIN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_LOGIN }}
+        GITHUB_PACKAGE_REGISTRY_PASSWORD: ${{ secrets.GITHUB_PACKAGE_REGISTRY_PASSWORD }}
+        IMAGE_NAME: 'perl-dzil'
 
     # This second step is illustrative and shows how to reference the 
     # output variables.  This is completely optional.
