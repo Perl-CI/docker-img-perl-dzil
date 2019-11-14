@@ -21,5 +21,5 @@ jobs:
         echo "The name:tag of the Docker Image is: $VAR1"
         echo "The docker image is hosted at $VAR2"
       env:
-        VAR1: ${{ steps.docker.outputs.IMAGE_SHA_NAME }}
-        VAR2: ${{ steps.docker.outputs.IMAGE_URL }}
+        VAR1: ${{ steps.docker.outputs.DOCKER_IMAGE_NAME }}
+        VAR2: ${{ steps.docker.outputs.DOCKER_IMAGE_URL }}
