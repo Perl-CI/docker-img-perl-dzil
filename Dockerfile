@@ -1,4 +1,9 @@
+#
+# Dockerfile to build perl-dzil Docker image for Perl CI project
+#
 FROM alpine:3.10
+
+LABEL maintainer="sebthebert@gmail.com"
 
 RUN apk update \
  && apk add ca-certificates wget \
