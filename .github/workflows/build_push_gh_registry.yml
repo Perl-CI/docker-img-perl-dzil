@@ -1,5 +1,5 @@
-name: Build and Publish Docker image to GitHub Package Registry
-on: push
+name: Build and Publish Docker image to GitHub Package Registry (on Push or Branch/Tag Creation events)
+on: [create, push]
 jobs:
   build:
     runs-on: ubuntu-latest 
